@@ -10,7 +10,6 @@ public class Dog
     // Instance variablese
     private String name;
     private String breed;
-    private String yearOfBirth;
     
     // Constructor
     public Dog(String name, String breed) {
@@ -19,19 +18,11 @@ public class Dog
     }
     
     // Mutator functions
-    public void setYearOfBirth(String yearOfBirth) {
-        this.yearOfBirth = yearOfBirth;
-    }
     
     // Accessor function
     public void printInfo() {
         System.out.println("Dog name: " + name);
         System.out.println("Dog breed: " + breed);
-        if(yearOfBirth != null) {
-            System.out.println("Dog year of birth: " + yearOfBirth);
-        } else {
-            System.out.println("The member has not entered year of birth for dog: " + name);
-        }
     }
     
     public String getName() {
@@ -42,7 +33,5 @@ public class Dog
         return breed;
     }
     
-    public String getYearOfBirth() {
-        return yearOfBirth;
-    }
+    
 }

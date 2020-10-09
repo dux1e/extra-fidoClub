@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=Member
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Member\ here.\r\n\r\n\ @author\ Joakim\ Christensen\r\n\ @version\ 30-09-2020\r\n
 comment1.params=name\ phoneNo
 comment1.target=Member(java.lang.String,\ java.lang.String)
 comment10.params=
@@ -10,7 +9,7 @@ comment11.target=void\ getDog()
 comment2.params=email
 comment2.target=void\ setMail(java.lang.String)
 comment3.params=dog
-comment3.target=void\ setDog(Dog)
+comment3.target=void\ addDog(Dog)
 comment4.params=YYYY
 comment4.target=void\ payDog(int)
 comment5.params=

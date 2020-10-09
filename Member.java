@@ -5,6 +5,9 @@
  * @author Joakim Christensen
  * @version 30-09-2020
  */
+
+import java.util.ArrayList;
+
 public class Member
 {
     // Instance variablese
@@ -12,11 +15,11 @@ public class Member
     private String phoneNo;
     private String email;
     private int paidYear;
-    // Instance variables for classes
-    private Dog dog;
+    private ArrayList<Dog> dogs;
 
     // Constructor
     public Member(String name, String phoneNo) {
+        this.dogs = new ArrayList<>();
         this.name = name;
         this.phoneNo = phoneNo;
     }
@@ -26,8 +29,8 @@ public class Member
         this.email = email;
     }
 
-    public void setDog(Dog dog) {
-        this.dog = dog;
+    public void addDog(Dog dog) {
+        dogs.add(dog);
     }
 
     public void payDog(int YYYY) {
@@ -43,19 +46,20 @@ public class Member
         } else {
             System.out.println("The member has not entered a mail");
         }
-        if(dog != null) {
-            System.out.println("The members dog information");
-            dog.printInfo();
+        if(dogs != null) {
+        getDog();
         } else {
-            System.out.println("The member hos not yet assigned a dog");
+        System.out.println("The member hos not yet assigned a dog");
         }
     }
 
     public boolean isFeeDue(int thisYear) {
         boolean feeDue;
         feeDue = false;
-        if (thisYear == paidYear) {
-            feeDue = true;
+        for(Dog dog : dogs) {
+            if (thisYear == paidYear) {
+                feeDue = true;
+            }
         }
         return feeDue;
     }
@@ -63,7 +67,7 @@ public class Member
     public boolean hasDog() {
         boolean hasDog;
         hasDog = false;
-        if(dog != null) {
+        if(dogs != null) {
             hasDog = true;
         }
         return hasDog;
@@ -82,6 +86,8 @@ public class Member
     }
 
     public void getDog() {
-        dog.printInfo();
+        for(Dog d : dogs) {
+            d.printInfo();
+        }
     }
 }
